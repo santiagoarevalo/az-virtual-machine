@@ -15,13 +15,13 @@ This is a Azure Virtual Machine created with Terraform. The purpose of this exer
 ## Step by step
 
 * We create a file ````main.tf```` in which we will code the infrastructure provisioning required to create the virtual machine.
-* We can make use of templates that exist to create this type of common resources. For example, here is a terraform guide to create a virtual machine.
+* We can make use of templates that exist to create this type of common resources. For example, here is a terraform guide to [create a virtual machine](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine).
 * After this, we create a variables file ````name.tf```` in which we will declare the variables that we want to use for the names of the resources to create.
 * Once the necessary variables have been declared, we create a file ````name.tfvars```` to initialize or assign a value to these variables.
 * We must make sure that the calls to the variables in the resources are done in a correct way.
-* In order to connect to our VM through a public ip via ssh, we must create a resource ````azurerm_public_ip````.
+* In order to connect to our VM through a public ip via ssh, we must create a resource ````azurerm_public_ip````. ([Guide to create a public ip](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip))
 * Already having the public ip, we must create a security rule, associated to the security group that we have defined, in which the access to port 22 through SSH is allowed. An example of this can be found here.
-* Finally, we associate our network interface with the security group by means of the resource ````azurerm_network_interface_security_group_association````
+* Finally, we associate our network interface with the security group by means of the resource ````azurerm_network_interface_security_group_association````. ([Guide to create this resource](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface_security_group_association))
 
 ## Commands
 
